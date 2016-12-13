@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/uwc/uwc-docs/issues"
   },
-  "homepage": "http://docs.uwc.io",
+  "homepage": "http://docs.madebyconnor.co",
   "devDependencies": {
     "browser-sync": "^2.14.3",
     "del": "^2.2.2",
@@ -40,7 +40,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.0",
-    "gulp-sass": "^2.3.1",
+    "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-update": "0.0.2",
