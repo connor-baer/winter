@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include core/head.html %}
+
+  <body>
+    <div class="site">
+      {% assign sidebar = page.lang + post.lang | append: '/sidebar.html' %}
+      {% include {{ sidebar }} %}
+
+      <div class="main">
+        <div class="content">
+          {% assign metabar = page.lang + post.lang | append: '/metabar.html' %}
+          {% include {{ metabar }} %}
+
+          {{ content }}
+        </div>
+      </div>
+
+    </div>
+    {% include core/scripts.html %}
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/search.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,29 @@
+// ==== LAYOUT ==== //
+
+// Define all global layouts and layout styles here.
+
+// 1. Breakpoints
+// 2. Helpers
+
+// 1. Breakpoints //
+
+$breakpoints: (small: 576px, medium: 769px, large: 1025px, x-large: 1441px);
+
+// You can use any valid arguments inserted into mappy-bp as the map values. Any of the following would do.
+$mappy-queries: (phone: mappy-bp(max-width small), tablet: mappy-bp(small medium), desktop: mappy-bp(medium), desktop-large: mappy-bp(large));
+
+// 2. Helpers //
+
+// Limits width on large screens and centers content.
+.site {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}

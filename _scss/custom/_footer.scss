@@ -1,0 +1,100 @@
+// ==== FOOTER ==== //
+
+// Style the footer here.
+
+.footer {
+  padding: 2rem 0;
+}
+
+.footer-nav {
+  @include clearfix;
+}
+
+.nav-previous,
+.nav-next {
+  display: block;
+  width: 50%;
+  padding: 1rem 1.5rem;
+  transition: background-color $short, color $short;
+  background-color: palette(gray, lighter);
+
+  &:hover,
+  &:focus {
+    background-color: palette($primary);
+    color: palette(white);
+
+    .nav-header,
+    .nav-title {
+      color: palette(white);
+    }
+  }
+}
+
+.nav-previous {
+  float: left;
+
+  .nav-arrow {
+    margin-right: 1rem;
+    float: left;
+  }
+
+  .nav-text {
+    float: left;
+  }
+}
+
+.nav-next {
+  float: right;
+
+  .nav-arrow {
+    margin-left: 1rem;
+    float: right;
+  }
+
+  .nav-text {
+    float: right;
+    text-align: right;
+  }
+}
+
+.nav-arrow svg {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem 0;
+  transition: fill $short;
+  fill: currentColor;
+}
+
+.nav-header {
+  @include font(body);
+
+  display: block;
+  margin: .25rem 0 .75rem;
+  color: palette(gray);
+  font-size: ms(0);
+  line-height: 1;
+}
+
+.nav-title {
+  @include font(header2);
+
+  margin: 0;
+}
+
+.footer-text {
+  @include font(header3);
+
+  margin-top: 2rem;
+  color: palette(gray, light);
+  text-align: center;
+
+  a {
+    transition: color $short;
+
+    &:hover,
+    &:focus {
+      color: palette($primary);
+    }
+  }
+}

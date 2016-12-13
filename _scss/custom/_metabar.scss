@@ -1,0 +1,41 @@
+// ==== METABAR ==== //
+
+// Style the metabar here.
+
+.metabar {
+  @include clearfix;
+
+  padding: 1.5rem 0;
+
+  a {
+    transition: color $short;
+
+    &:hover,
+    &:focus {
+      color: palette($primary);
+    }
+  }
+}
+
+.metabar-left {
+  @include font(summary);
+
+  float: left;
+  color: palette(gray);
+  font-size: ms(0);
+}
+
+.metabar-right {
+  float: right;
+  color: palette(gray, light);
+  font-size: ms(0);
+  cursor: pointer;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: .25rem;
+    vertical-align: text-bottom;
+    fill: currentColor;
+  }
+}

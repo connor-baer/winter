@@ -1,0 +1,256 @@
+// ==== TYPOGRAPHY ==== //
+
+// Define all global font styles here.
+
+// 1. Variables
+// 2. font()
+// 3. Global styles
+
+// 1. Variables //
+
+$sans: "source-sans-pro", "Source Sans Pro", "PT Sans", Arial, sans-serif;
+$sans-normal: 400;
+$sans-semibold: 600;
+$sans-bold: 700;
+
+$code: "source-code-pro", "Source Code Pro", "Courier New", Courier, monospace;
+
+$ms-base: 1rem;
+$ms-ratio: 1.25;
+
+$typi: (null: (16px, 1.75), medium: (16px, 2), x-large: 20px);
+
+@mixin link-underline {
+  display: inline-block;
+  position: relative;
+  transition: color $short;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: color $short;
+    content: "";
+    z-index: -1;
+  }
+}
+
+// 2. font() //
+
+// The font() function accepts a style parameter.
+// It is intended to promote consistency in the typography,
+// therefore the number of styles should be kept to a minimum.
+// Attributes which change between instances should not be defined here (e.g. color).
+
+@mixin font($style: null) {
+  @if $style == null {
+    @warn "Mixin font() received no input! Please provide a style.";
+
+    color: red;
+    font-size: ms(10);
+  }
+  @else if $style == "title" {
+    font-family: $sans;
+    font-size: ms(5);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+  }
+  @else if $style == "header1" {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: palette(gray, darker);
+    font-family: $sans;
+    font-size: ms(3);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+  }
+  @else if $style == "header2" {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: palette(gray, dark);
+    font-family: $sans;
+    font-size: ms(2);
+    font-weight: $sans-bold;
+    line-height: 1.2;
+  }
+  @else if $style == "header3" {
+    font-family: $sans;
+    font-size: ms(0);
+    font-weight: $sans-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+  @else if $style == "summary" {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: $sans;
+    font-size: ms(1);
+    font-weight: $sans-semibold;
+  }
+  @else if $style == "body" {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: $sans;
+    font-size: ms(1);
+    font-weight: $sans-normal;
+  }
+  @else {
+    @warn "Mixin font() received invalid input! This style does not exist.";
+
+    color: red;
+    font-size: ms(10);
+  }
+}
+
+// 3. Global styles //
+
+// Update the foundational and global aspects of the page here.
+
+html {
+  @include typi-base;
+
+  background-color: palette(gray, darker);
+  font-family: $sans;
+  font-weight: $sans-normal;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/.
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: palette(white);
+  color: palette(gray, darker);
+  overflow-x: hidden;
+}
+
+a {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+strong,
+.strong {
+  font-weight: $sans-bold;
+}
+
+dfn,
+i,
+em,
+.em {
+  font-style: italic;
+}
+
+figure {
+  margin: 0;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+  padding: .25em .5em;
+  border-radius: .25rem;
+  background-color: palette(gray, lighter);
+  font-family: $code;
+  font-size: ms(0);
+}
+
+pre {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 2rem;
+  padding: 1.5rem;
+  border: 1px solid palette(gray, light);
+  font-size: ms(0);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+code {
+  padding: 0.125em 0.25em;
+  background-color: palette(gray, lighter);
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted palette(gray, light);
+  cursor: help;
+}
+
+mark {
+  padding: 0.125em 0.25em;
+  background: palette(orange, light);
+  color: #fff;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+hr {
+  position: relative;
+  height: 2px;
+  margin: 1rem 0;
+  border: 0;
+  background-color: palette(gray, light);
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
+// Lists
+ul,
+ol,
+dl {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+}
+
+// Tables
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}

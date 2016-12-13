@@ -1,0 +1,245 @@
+// ==== CONTENT ==== //
+
+// Style the page and post content here.
+
+// 1. General
+// 2. Sections
+// 3. Pages
+// 4. Posts
+// 5. Custom
+
+// 1. General
+
+.main {
+  @include mappy-query(desktop) {
+    margin-left: 20rem;
+  }
+}
+
+.turbolinks-progress-bar {
+  height: 4px;
+  background-color: palette($primary);
+}
+
+.content {
+  width: 45rem;
+  max-width: calc(100% - 4rem);
+  margin: 0 auto;
+  font-size: ms(1);
+}
+
+// 2. Sections
+
+.section {
+  margin: 8rem 0;
+
+  @include mappy-query(phone) {
+    margin: 2rem 0;
+  }
+}
+
+.section-title {
+  @include font(title);
+}
+
+.section-underline {
+  display: block;
+  width: 8rem;
+  height: .5rem;
+  margin-bottom: 2rem;
+  background-color: palette($primary);
+}
+
+.section-content {
+  @include font(summary);
+
+  a {
+    @include link-underline;
+
+    color: palette($primary);
+
+    &::after {
+      bottom: 4px;
+      background-color: transparent;
+    }
+
+    &:hover::after {
+      background-color: palette($primary);
+    }
+  }
+}
+
+// 3. Pages
+
+.page-title {
+  @include font(title);
+
+  margin: 3rem 0 1rem;
+}
+
+.page-underline {
+  display: block;
+  width: 8rem;
+  height: .5rem;
+  margin-bottom: 3rem;
+  background-color: palette($primary);
+}
+
+.page-content {
+  color: palette(gray, dark);
+
+  h1 {
+    @include font(header1);
+
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @include font(header2);
+
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+  }
+
+  h3 {
+    @include font(header3);
+
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+  }
+
+  p {
+    @include font(body);
+  }
+
+  a {
+    @include link-underline;
+
+    color: palette($primary);
+
+    &::after {
+      bottom: 4px;
+      background-color: transparent;
+    }
+
+    &:hover::after {
+      background-color: palette($primary);
+    }
+  }
+
+  // Quotes
+  blockquote {
+    @include font(summary);
+
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    border-left: .25rem solid palette(gray, light);
+    color: palette(gray);
+
+    @include mappy-query(desktop) {
+      padding-right: 5rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .highlight {
+    margin: 1rem 0;
+
+    pre {
+      margin-bottom: 0;
+    }
+  }
+
+  // Messages
+  .message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: palette(blue, lighter);
+    color: palette(gray, dark);
+
+    &.alert {
+      background-color: palette(red, lighter);
+    }
+
+    &.warning {
+      background-color: palette(yellow, lighter);
+    }
+
+    &.hint {
+      background-color: palette(green, lighter);
+    }
+  }
+}
+
+// 4. Posts
+
+// Meta data line below post title
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: palette(gray);
+}
+
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid palette(gray, light);
+}
+
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+// 5. Custom
+
+.links-wrapper {
+  @include clearfix;
+
+  margin: 1rem 0;
+}
+
+.links-left,
+.links-right {
+  width: calc(50% - .5rem);
+  padding: 1rem 1.5rem;
+  transition: background-color $short;
+  background-color: palette(gray, lighter);
+  color: palette(gray, dark);
+
+  @include mappy-query(phone) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: palette($primary);
+    color: palette(white);
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    @include font(body);
+  }
+}
+
+.links-left {
+  float: left;
+}
+
+.links-right {
+  float: right;
+}

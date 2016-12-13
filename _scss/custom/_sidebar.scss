@@ -1,0 +1,126 @@
+// === SIDEBAR === //
+
+// Style the sidebar and content here.
+
+.sidebar {
+  position: relative;
+  width: 100%;
+  background-color: palette(gray, lighter);
+
+  @include mappy-query(desktop) {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20rem;
+    text-align: left;
+  }
+}
+
+.sidebar-top {
+  padding: 2rem 2rem 0;
+}
+
+.sidebar-logo {
+  width: 75%;
+  max-width: 12rem;
+
+  .fill-1,
+  .fill-2 {
+    transition: fill $short;
+    fill: palette($primary);
+  }
+
+  &:hover .fill-1,
+  &:focus .fill-1,
+  &:hover .fill-2,
+  &:focus .fill-2 {
+    fill: palette($primary, light);
+  }
+}
+
+.sidebar-search {
+  margin-top: vr(3);
+}
+
+.search-form {
+  position: relative;
+}
+
+.sidebar-center {
+  padding: 1.5rem 0 3.5rem;
+}
+
+.sidebar-nav ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  a {
+    transition: color $short;
+
+    // Hover state.
+    &:hover,
+    &:focus {
+      color: palette($primary);
+    }
+
+    // Active state.
+    &.active {
+      color: palette($primary);
+    }
+  }
+}
+
+.nav-primary {
+  @include font(summary);
+
+  position: relative;
+  margin: .5rem 0;
+  color: palette(gray, dark);
+
+  > a {
+    display: block;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  > ul {
+    display: none;
+  }
+
+  // Open state.
+  &.open > ul {
+    display: block;
+  }
+}
+
+.nav-secondary {
+  padding: 0 3rem;
+  color: palette(gray);
+
+  a {
+    @include font(body);
+
+    font-size: ms(0);
+  }
+}
+
+.sidebar-bottom {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5rem 2rem;
+
+  a {
+    transition: color $short;
+
+    &:hover,
+    &:focus {
+      color: palette($primary);
+    }
+
+    &.active {
+      font-weight: $sans-bold;
+    }
+  }
+}

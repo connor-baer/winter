@@ -1,0 +1,31 @@
+<div class="sidebar">
+  <div class="sidebar-top">
+    <div class="sidebar-logo">
+      <a href="{{ site.url }}{{ site.baseurl }}" title="Go to the startpage.">
+        {% include core/logo.html %}
+      </a>
+    </div>
+    <div class="sidebar-search">
+      <form role="search" class="search-form" action="/suche/" method="get">
+        <div class="form-group">
+          <input id="search-box" class="form-input" type="search" placeholder="Dokumentation durchsuchen..." name="query" required/>
+          <span class="form-highlight"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="sidebar-center">
+    <nav class="sidebar-nav">
+      {% include core/navigation.html context="/" class="nav-primary" %}
+    </nav>
+  </div>
+
+  <div class="sidebar-bottom">
+    {% assign entries=site.pages | where: "ref", page.ref | sort: "lang" %}
+    {% for entry in entries %}
+      <a href="{{ entry.url }}" class="{{ entry.lang }}{% if page.lang == entry.lang %} active{% endif %}">{{ entry.lang }}</a>
+      {% unless forloop.last %}•{% endunless %}
+    {% endfor %}
+  </div>
+
+</div>

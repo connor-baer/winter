@@ -1,0 +1,52 @@
+<footer class="footer">
+	<nav class="footer-nav">
+		{% assign entries = site.pages | where:"lang", page.lang | sort: "order" %}
+		{% for entry in entries %}
+			{% if entry.url == page.url %}
+				{% assign entry_index0 = forloop.index0 %}
+				{% assign entry_index1 = forloop.index %}
+			{% endif %}
+		{% endfor %}
+		{% for entry in entries %}
+			{% if entry_index0 == forloop.index %}
+				{% assign prev_entry = entry %}
+			{% endif %}
+			{% if entry_index1 == forloop.index0 %}
+				{% assign next_entry = entry %}
+			{% endif %}
+		{% endfor %}
+
+		{% if prev_entry %}
+			{% unless prev_entry.exclude == true or prev_entry.path contains ".xml" %}
+			<a class="nav-previous" href="{{ prev_entry.url }}">
+				<div class="nav-arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+					</svg>
+				</div>
+				<div class="nav-text">
+					<span class="nav-header">Vorherige Seite</span>
+					<h4 class="nav-title">{{ prev_entry.title }}</h4>
+				</div>
+			</a>
+			{% endunless %}
+		{% endif %}
+		{% if next_entry %}
+			{% unless next_entry.exclude == true or next_entry.path contains ".xml" %}
+			<a class="nav-next" href="{{ next_entry.url }}">
+				<div class="nav-arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+					</svg>
+				</div>
+				<div class="nav-text">
+					<span class="nav-header">Nächste Seite</span>
+					<h4 class="nav-title">{{ next_entry.title }}</h4>
+				</div>
+			</a>
+			{% endunless %}
+		{% endif %}
+	</nav>
+
+	<h3 class="footer-text">{{ site.title }} © {{ site.time | date: '%Y' }} <a href="{{ site.author.url }}">{{ site.author.org }}</a></h3>
+</footer>

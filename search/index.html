@@ -1,0 +1,29 @@
+---
+layout: search
+title: Search results
+exclude: true
+lang: en
+ref: search
+---
+
+<div class="page-content">
+  <section id="search-results"></section>
+</div>
+
+<script>
+  window.store = {
+    {% assign entries = site.pages | where:"lang", page.lang | sort: "order" %}
+    {% for entry in entries %}
+      {% unless entry.exclude == true or entry.path contains ".xml" %}
+        '{{ entry.url | slugify }}': {
+          'title': '{{ entry.title | xml_escape }}',
+          'author': '{{ entry.author | xml_escape }}',
+          'category': '{{ entry.category | xml_escape }}',
+          'content': {{ entry.content | strip_html | strip_newlines | jsonify }},
+          'url': '{{ entry.url | xml_escape }}'
+        }
+        {% unless forloop.last %},{% endunless %}
+      {% endunless %}
+    {% endfor %}
+  };
+</script>

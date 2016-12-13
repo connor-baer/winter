@@ -1,0 +1,11 @@
+{
+  "preset": "airbnb",
+  "fileExtensions": [".js"],
+  "excludeFiles": [
+    "assets/",
+    "_site/",
+    "gulpconfig.js",
+    "gulpfile.js/"
+  ],
+  "requireVarDeclFirst": false
+}
