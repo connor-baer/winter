@@ -1,6 +1,6 @@
 {
   "name": "change",
-  "description": "Change is a minimalist Jekyll theme built by @connor_baer.",
+  "description": "Docs is a minimalist Jekyll theme built for my documentation.",
   "main": "index.html",
   "authors": [
     "Connor Bär"
@@ -16,7 +16,7 @@
     "developer",
     "theme"
   ],
-  "homepage": "http://connorbaer.io",
+  "homepage": "http://docs.madebyconnor.co",
   "private": true,
   "ignore": [
     "**/.*",

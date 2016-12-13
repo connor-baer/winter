@@ -22,7 +22,7 @@ title:                'UWC Docs'
 tagline:              'UWC Docs is a documentation website for the UWC WordPress theme.'
 keywords:             'documentation, wordpress, theme, uwc, jekyll'
 description:          'UWC Docs is a documentation website for the UWC WordPress theme.'
-url:                  http://docs.uwc.io
+url:                  http://docs.madebyconnor.co
 baseurl:              ''
 logo:                 /assets/icons/apple-icon-144x144.png
 twitter:
