@@ -28,7 +28,6 @@ var pkg  = require('./package.json'), // Allows access to the project metadata f
   modules = 'node_modules/' // NPM packages.
 ;
 
-
 module.exports = {
 
 
@@ -90,8 +89,8 @@ module.exports = {
   // 5. Clean //
 
   clean: {
-    tidy: [ src + '**/.DS_Store' ], // A glob pattern matching junk files to clean out of `build`; feel free to add to this array.
-    wipe: [ dist + assets ], // Clean this out before creating a new distribution copy.
+    tidy: [src + '**/.DS_Store'], // A glob pattern matching junk files to clean out of `build`; feel free to add to this array.
+    wipe: [dist + assets], // Clean this out before creating a new distribution copy.
   },
 
 
@@ -123,6 +122,7 @@ module.exports = {
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
       scripts: ['navigation', 'core'],
+      search: ['search'],
     },
     chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
@@ -133,6 +133,10 @@ module.exports = {
       navigation: [
         bower + 'smooth-scroll/dist/js/smooth-scroll.js',
         modules + 'turbolinks/dist/turbolinks.js',
+      ],
+      search: [
+        modules + 'lunr/lunr.min.js',
+        src + '_js/search.js',
       ],
     },
     dest: assets,// Where the scripts end up in your theme
@@ -178,11 +182,11 @@ module.exports = {
             suffix: '-small',
             extname: '.jpg',
           },
-        }, ],
+        },],
       },
       options: {
         errorOnUnusedImage: false,
-        silent: true
+        silent: true,
       },
       dest: src + assets + 'images/',
     },
@@ -217,7 +221,7 @@ module.exports = {
         favicons: true,             // Create regular favicons. `boolean`
         firefox: true,              // Create Firefox OS icons. `boolean` or `{ offset: offsetInPercentage }`
         windows: true,              // Create Windows 8 tile icons. `boolean`
-        yandex: false                // Create Yandex browser icon. `boolean`
+        yandex: false,                // Create Yandex browser icon. `boolean`
       },
     },
     destHtml: src,
