@@ -3,6 +3,8 @@
 
 # UWC Docs
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/madebyconnor/docs.svg)](https://greenkeeper.io/)
+
 UWC Docs is a documentation website for the [UWC WordPress theme](https://github.com/uwc/uwc-website). It's loosely based on [Hyde](http://hyde.getpoole.com/), by [@mdo](https://twitter.com/mdo).
 
 ![UWC Docs screenshot](/assets/screenshot.png?raw=true)
