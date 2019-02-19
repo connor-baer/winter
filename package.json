@@ -1,58 +1,62 @@
 {
-  "name": "uwc-docs",
+  "name": "winter",
   "version": "1.0.0",
-  "description": "Documentation website for the UWC WordPress theme.",
-  "main": "index.html",
+  "description": "A Jekyll theme built for documentation.",
+  "main": "site/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp default",
+    "setup": "gulp setup",
+    "build": "gulp build",
+    "lint": "foundry run eslint --fix \"_js/**/*.js\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uwc/uwc-docs.git"
+    "url": "git+https://github.com/connor-baer/winter.git"
   },
   "keywords": [
     "connor",
     "bär",
-    "uwc",
     "documentation",
     "docs",
-    "wordpress",
     "jekyll",
     "theme"
   ],
   "author": "Connor Bär",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uwc/uwc-docs/issues"
+    "url": "https://github.com/connor-baer/winter/issues"
   },
-  "homepage": "http://docs.madebyconnor.co",
+  "homepage": "https://connor-baer.github.io/winter/",
+  "dependencies": {
+    "lunr": "^0.7.1",
+    "normalize.css": "^6.0.0",
+    "open-color": "^1.4.0",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
+  },
   "devDependencies": {
-    "browser-sync": "^2.14.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@sumup/foundry": "^1.0.3",
+    "browser-sync": "^2.17.6",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-changed": "^1.3.2",
-    "gulp-concat": "^2.6.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^2.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-favicons": "^2.2.7",
-    "gulp-filter": "^4.0.0",
-    "gulp-image-resize": "^0.10.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-jshint": "^2.0.1",
+    "gulp-filter": "^5.0.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-responsive": "^2.7.0",
+    "gulp-responsive": "^2.6.0",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-update": "0.0.2",
     "gulp-util": "^3.0.7",
-    "lunr": "^0.7.1",
     "merge-stream": "^1.0.0",
-    "open-color": "^1.4.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.2.2",
-    "turbolinks": "^5.0.0"
+    "run-sequence": "^1.2.2"
   }
 }

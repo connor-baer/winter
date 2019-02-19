@@ -1,44 +1,36 @@
-[![Build Status](https://travis-ci.org/uwc/uwc-docs.svg?branch=master)](https://travis-ci.org/uwc/uwc-docs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/87925558dd5042e088f6442818b2687d)](https://www.codacy.com/app/connor_baer/uwc-docs)
+[![Build Status](https://travis-ci.org/connor-baer/winter.svg?branch=master)](https://travis-ci.org/connor-baer/winter) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/629109c53398418981bbc5929f330562)](https://www.codacy.com/app/connor_baer/winter?utm_source=github.com&utm_medium=referral&utm_content=connor-baer/winter&utm_campaign=Badge_Grade)
 
+# 🌱 Winter
 
-# UWC Docs
+A [Jekyll](http://jekyllrb.com) theme built for documentation, loosely based on [Hyde](http://hyde.getpoole.com/), by [@mdo](https://twitter.com/mdo)
 
-UWC Docs is a documentation website for the [UWC WordPress theme](https://github.com/uwc/uwc-website). It's loosely based on [Hyde](http://hyde.getpoole.com/), by [@mdo](https://twitter.com/mdo).
+> ⚠️ This theme should work as-is, but is no longer actively maintained. [Contributions](#contributing) are welcome!
 
-![UWC Docs screenshot](/assets/screenshot.png?raw=true)
-
-
-## Contents
-
-- [Usage](#usage)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
-
+[![Winter screenshot](https://github.com/connor-baer/winter/blob/master/_images/screenshot.jpg)](https://connor-baer.github.io/winter)
 
 ## Usage
 
-UWC Docs shines with a simple & intuitive interface, multi-language support and full content search. Just [download](https://github.com/uwc/uwc-docs/archive/master.zip), [install](https://jekyllrb.com/docs/installation/) and start adding your own content!
+You'll need to have [Jekyll](https://jekyllrb.com/), the `bundler` gem, and [`yarn`](https://yarnpkg.com/) (`npm` also works) installed on our computer. Winter provides a fully furnished Jekyll setup — just clone and install the dependencies:
 
+```bash
+# Ruby gems
+bundle install
+# Node modules
+yarn
+```
 
-## Development
+Then simply run `yarn start` to start the Jekyll server on port `4000`.
 
-UWC Docs has three branches, two are used for active development.
+## Options
 
-- `master` for code development.  **All pull requests should be to submitted against `master`.**
-- `edits` for content development.  **This branch is used when editing content through a 'Edit on GitHub' button.**
-- `gh-pages` for the hosted site, which includes the analytics tracking code. **Please avoid using this branch.**
+Winter shines with a simple & intuitive interface, multi-language support, and full content search. It includes some customizable options, applied via options in the `_config.yml` file. Have a look at the [`_config.yml`](_config.yml) file for all available options.
 
+## Contributing
 
-## Author
-
-**Connor Bär**
-- <https://github.com/connor-baer>
-- <https://twitter.com/connor_baer>
-
+**This theme is no longer actively maintained.** However, I welcome bug fixes and feature request through [pull requests](https://github.com/connor-baer/winter/compare). If you don't feel comfortable making code changes, feel free to [open an issue](https://github.com/connor-baer/winter/issues/new), perhaps somebody else will help out.
 
 ## License
 
 Open sourced under the [MIT license](LICENSE.md).
 
-❤️
+💙

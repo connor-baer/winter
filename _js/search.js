@@ -1,42 +1,46 @@
-/* jshint -W117 */
-/* jshint -W098 */
-/* jshint -W070 */
+/* global document */
+/* global window */
+/* global lunr */
 
-(function () {
+(() => {
   function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
+    const query = window.location.search.substring(1);
+    const vars = query.split('&');
 
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split('=');
+    for (let i = 0; i < vars.length; i += 1) {
+      const pair = vars[i].split('=');
 
       if (pair[0] === variable) {
         return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
       }
     }
+    return undefined;
   }
 
-  var searchTerm = getQueryVariable('query');
+  const searchTerm = getQueryVariable('query');
 
   function displaySearchResults(results, store) {
-    var searchResults = document.getElementById('search-results');
+    const searchResults = document.getElementById('search-results');
 
     // Are there any results?
     if (results.length) {
-      var resultString = '<h1>Search results</h1>';
-
       // Iterate over the results
-      for (var i = 0; i < results.length; i++) {
-        var item = store[results[i].ref];
-        resultString += '<article><a href="' + item.url + '"><h2>' + item.title + '</h2></a>';
-        resultString += '<p>' + item.content.substring(0, 150) + '...</p></article>';
-      }
+      const resultString = results.reduce((allResults, result) => {
+        const item = store[result.ref];
+        // eslint-disable-next-line no-param-reassign
+        allResults += `<article><a href="${item.url}"><h2>${
+          item.title
+        }</h2></a>`;
+        // eslint-disable-next-line no-param-reassign
+        allResults += `<p>${item.content.substring(0, 150)}...</p></article>`;
+        return allResults;
+      }, '<h1>Search results</h1>');
 
       searchResults.innerHTML = resultString;
     } else {
-      var noResultString = '';
+      let noResultString = '';
       noResultString += '<h1>No results found!</h1>';
-      noResultString += '<p><i>"' + searchTerm + '"</i> did not match any content. ';
+      noResultString += `<p><i>"${searchTerm}"</i> did not match any content. `;
       noResultString += 'Please try a different keyword.</p>';
       searchResults.innerHTML = noResultString;
     }
@@ -46,7 +50,8 @@
     document.getElementById('search-box').setAttribute('value', searchTerm);
 
     // Initalize lunr with the fields it will be searching on.
-    var idx = lunr(function () {
+    // eslint-disable-next-line func-names
+    const idx = lunr(function() {
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
@@ -55,21 +60,19 @@
     });
 
     // Add the data to lunr
-    for (var key in window.store) {
-      if (window.store.hasOwnProperty(key)) {
-        idx.add({
-          id: key,
-          title: window.store[key].title,
-          author: window.store[key].author,
-          category: window.store[key].category,
-          content: window.store[key].content,
-        });
+    Object.keys(window.store).forEach(key => {
+      idx.add({
+        id: key,
+        title: window.store[key].title,
+        author: window.store[key].author,
+        category: window.store[key].category,
+        content: window.store[key].content
+      });
 
-        var results = idx.search(searchTerm);
+      const results = idx.search(searchTerm);
 
-        // Get lunr to perform a search
-        displaySearchResults(results, window.store);
-      }
-    }
+      // Get lunr to perform a search
+      displaySearchResults(results, window.store);
+    });
   }
-}());
+})();

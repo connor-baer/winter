@@ -1,26 +1,28 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
   {% include core/head.html %}
 
   <body>
     <div class="site">
-      {% assign sidebar = page.lang + post.lang | append: '/sidebar.html' %}
+      {% assign sidebar = page.lang | append: post.lang | append: '/sidebar.html' %} 
       {% include {{ sidebar }} %}
 
       <div class="main">
         <div class="content">
-          {% assign metabar = page.lang + post.lang | append: '/metabar.html' %}
+          {% assign metabar = page.lang | append: post.lang | append: '/metabar.html' %}
           {% include {{ metabar }} %}
 
           {{ content }}
 
-          {% assign footer = page.lang + post.lang | append: '/footer.html' %}
+          {% assign footer = page.lang | append: post.lang | append: '/footer.html' %}
           {% include {{ footer }} %}
         </div>
       </div>
-
     </div>
     {% include core/scripts.html %}
   </body>
-
 </html>

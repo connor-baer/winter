@@ -1,57 +1,78 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      rouge
-
+markdown: kramdown
+highlighter: rouge
 
 # Gems
-gems:
+plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-redirect-from
   - jekyll-seo-tag
 
-
 # Settings
-color:                '#228ae6'
-exclude:              [CNAME, README.md, NOTES.md, LICENSE.md, .gitignore, package.json, bower.json, _js, _scss, gulpfile.js, gulpconfig.js, node_modules, bower_components, gemfile]
-permalink:            /:title/
-
+exclude:
+  [
+    CNAME,
+    README.md,
+    LICENSE.md,
+    .gitignore,
+    package.json,
+    yarn.lock,
+    _js,
+    _scss,
+    _images,
+    gulpfile.js,
+    gulpconfig.js,
+    node_modules,
+    gemfile,
+    Gemfile.lock,
+    lint-staged.config.js,
+    prettier.config.js,
+  ]
+permalink: /:title/
+compress_html:
+  clippings: all
+  comments: all
 
 # Site meta
-title:                'UWC Docs'
-tagline:              'UWC Docs is a documentation website for the UWC WordPress theme.'
-keywords:             'documentation, wordpress, theme, uwc, jekyll'
-description:          'UWC Docs is a documentation website for the UWC WordPress theme.'
-url:                  http://docs.madebyconnor.co
-baseurl:              ''
-logo:                 /assets/icons/apple-icon-144x144.png
+title: 'Winter'
+tagline: 'A Jekyll theme built for documentation.'
+keywords: 'documentation, theme, jekyll, winder '
+description: 'Winter is a Jekyll theme built for documentation.'
+url: https://connor-baer.github.io
+baseurl: '/winter'
+assets: '/assets'
+images: '/images'
+logo: /assets/icons/apple-icon-144x144.png
 twitter:
-  username:           connor_baer
+  username: connor_baer
 
 google_analytics_key: UA-37412525-6
 google_site_verification: p5kLTD8qj2E2-ScnrDnltQoqY_MLqN0QW3hlk5N4qYQ
 
 author:
-  org:                Made by Connor.
-  name:               Connor Bär
-  url:                http://madebyconnor.io
-  email:              hi@madebyconnor.io
-  twitter:            connor_baer
+  org: Made by Connor.
+  name: Connor Bär
+  url: https://madebyconnor.co
+  email: hello@madebyconnor.co
+  twitter: connor_baer
 
-version:              1.1.0
+social:
+  twitter: https://twitter.com/connor_baer
+  instagram: https://instagram.com/connor_baer
+  github: https://github.com/connor-baer/spring
+  medium: https://medium.com/@connor_baer
+
+version: 2.0.0
 
 github:
-  repo:               https://github.com/uwc/uwc-docs
+  repo: https://github.com/connor-baer/winter
 
 # Integrations
 # typekit:              rnf3gir
 
 google_fonts:
-  Source Sans Pro:    400, 600, 700
+  Source Sans Pro: 400, 600, 700
   Source Code Pro:
-
 # google_analytics_key: UA-37412525-4
 # google_site_verification: Z-pc_HPc4XNBz8xg1fgtxO2MSIYLirZc2jWTNq0bJyM
-
-# facebook:
-#   app_id:             169140053203395
