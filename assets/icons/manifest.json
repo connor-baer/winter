@@ -1,13 +1,14 @@
 {
-  "name": "uwc-docs",
-  "short_name": "uwc-docs",
-  "description": "Documentation website for the UWC WordPress theme.",
+  "name": "winter",
+  "short_name": "winter",
+  "description": "A Jekyll theme built for documentation.",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "portrait",
   "start_url": "/index.html",
-  "background_color": "#f9423a",
+  "background_color": "#ffffff",
+  "theme_color": "#f9423a",
   "icons": [
     {
       "src": "assets/icons/android-chrome-36x36.png",

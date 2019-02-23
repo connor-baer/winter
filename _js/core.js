@@ -1,17 +1,9 @@
-/* jshint -W117 */
-/* jshint -W098 */
-/* jshint -W070 */
+/* global SmoothScroll */
 
-document.addEventListener('turbolinks:load', function () {
-
-  // SMOOTHSCROLL //
-
-  smoothScroll.init({
-
-    // Easing pattern to use.
-    easing: 'easeInOutCubic',
-
-    // How far to offset the scrolling anchor location in pixels.
-    offset: 64,
-  });
+// eslint-disable-next-line no-unused-vars
+const scroll = new SmoothScroll('a[href*="#"]', {
+  // Easing pattern to use
+  easing: 'easeInOutCubic',
+  // How far to offset the scrolling anchor location in pixels
+  offset: 80
 });

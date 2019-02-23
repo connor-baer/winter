@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "name": "uwc-docs",
-  "description": "Documentation website for the UWC WordPress theme.",
+  "name": "winter",
+  "description": "A Jekyll theme built for documentation.",
   "icons": {
     "60": "assets/icons/firefox_app_60x60.png",
     "128": "assets/icons/firefox_app_128x128.png",
