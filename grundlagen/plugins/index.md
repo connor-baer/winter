@@ -2,7 +2,7 @@
 layout: page
 title: Getting help
 order: 1.6
-lang: en
+lang: de
 ref: basics-help
 ---
 

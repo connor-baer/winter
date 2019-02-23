@@ -40,7 +40,7 @@ tagline: 'A Jekyll theme built for documentation.'
 keywords: 'documentation, theme, jekyll, winder '
 description: 'Winter is a Jekyll theme built for documentation.'
 url: https://connor-baer.github.io
-baseurl: '/winter'
+baseurl: ''
 assets: '/assets'
 images: '/images'
 logo: /assets/icons/apple-icon-144x144.png
@@ -67,6 +67,23 @@ version: 2.0.0
 
 github:
   repo: https://github.com/connor-baer/winter
+
+# Translations
+footer:
+  prev_page:
+    de: Vorherige Seite
+    en: Previous page
+  next_page:
+    de: Nächste Seite
+    en: Next page
+metabar:
+  edit:
+    de: Seite bearbeiten
+    en: Edit page
+sidebar:
+  search: 
+    de: Dokumentation durchsuchen...
+    en: Search documentation...
 
 # Integrations
 # typekit:              rnf3gir

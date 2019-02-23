@@ -4,25 +4,22 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
-  {% include core/head.html %}
+  {% include head.html %}
 
   <body>
     <div class="site">
-      {% assign sidebar = page.lang | append: post.lang | append: '/sidebar.html' %} 
-      {% include {{ sidebar }} %}
+      {% include sidebar.html %}
 
       <div class="main">
         <div class="content">
-          {% assign metabar = page.lang | append: post.lang | append: '/metabar.html' %}
-          {% include {{ metabar }} %}
+          {% include metabar.html %}
 
           {{ content }}
 
-          {% assign footer = page.lang | append: post.lang | append: '/footer.html' %}
-          {% include {{ footer }} %}
+          {% include footer.html %}
         </div>
       </div>
     </div>
-    {% include core/scripts.html %}
+    {% include scripts.html %}
   </body>
 </html>

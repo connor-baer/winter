@@ -1,14 +1,14 @@
 <div class="sidebar">
   <div class="sidebar-top">
     <div class="sidebar-logo">
-      <a href="{{ site.url }}{{ site.baseurl }}" title="Go to the startpage.">
-        {% include core/logo.html %}
+      <a href="{{ site.url }}{{ site.baseurl }}">
+        {% include logo.html %}
       </a>
     </div>
     <div class="sidebar-search">
       <form role="search" class="search-form" action="/suche/" method="get">
         <div class="form-group">
-          <input id="search-box" class="form-input" type="search" placeholder="Dokumentation durchsuchen..." name="query" required/>
+          <input id="search-box" class="form-input" type="search" placeholder="{{ site.sidebar.search[page.lang] }}" name="query" required/>
           <span class="form-highlight"></span>
         </div>
       </form>
@@ -16,7 +16,7 @@
   </div>
   <div class="sidebar-center">
     <nav class="sidebar-nav">
-      {% include core/navigation.html context="/" class="nav-primary" %}
+      {% include navigation.html context="/" class="nav-primary" %}
     </nav>
   </div>
 
